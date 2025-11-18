@@ -1,43 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Heroes Guild</title>
-  <meta name="description" content="$0 AI-powered empire. Winners enter. Champions are forged. Perth, Western Australia.">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&family=Rajdhani:wght@600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Heroes Guild ⚔️🛡️</title>
   <style>
-    body { margin: 0; background: #0b0014; color: #fff; font-family: Rajdhani; height: 100vh; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle at center, #1a0033, #0b0014); }
-    .container { max-width: 520px; text-align: center; padding: 2rem; }
-    h1 { font-family: Orbitron; font-size: 4.5rem; margin: 0; background: linear-gradient(90deg, #00ffea, #ffd700); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .motto { font-size: 1.8rem; margin: 1.5rem 0; opacity: 0.9; }
-    .btn { display: inline-block; margin: 2rem; padding: 1.2rem 3rem; background: #00ffea; color: #000; font-size: 1.4rem; font-weight: bold; text-decoration: none; border-radius: 8px; box-shadow: 0 0 30px #00ffea88; transition: 0.3s; }
-    .btn:hover { transform: scale(1.05); box-shadow: 0 0 50px #00ffea; }
-    .latin { font-size: 1.1rem; opacity: 0.7; margin-top: 3rem; }
-    #member-count { margin: 2rem 0; font-size: 1.5rem; opacity: 0.9; text-align: center; }
+    body { margin:0; background:#000; color:#00ff9d; font-family:'Cinzel', serif; text-align:center; overflow:hidden; }
+    .hero { min-height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; background:radial-gradient(circle at center, #001a0f, #000); }
+    h1 { font-size:5rem; text-shadow:0 0 20px #00ff9d, 0 0 40px #00ff41; letter-spacing:8px; }
+    .motto { font-size:2rem; margin:20px; color:#b8860b; text-shadow:0 0 15px #b8860b; }
+    .enter-btn { 
+      margin-top:40px; padding:20px 60px; background:#001a0f; color:#00ff9d; 
+      font-size:2.5rem; text-decoration:none; border:3px solid #00ff9d; 
+      box-shadow:0 0 30px #00ff9d; transition:0.4s; 
+    }
+    .enter-btn:hover { background:#00ff9d; color:#000; box-shadow:0 0 50px #00ff9d; }
+    .mobile-enter { display:none; }
+    .gate-backup { margin-top:30px; font-size:1.8rem; color:#00ff9d; text-shadow:0 0 15px #00ff9d; }
+    @media (max-width:768px) { h1{font-size:3rem;} .enter-btn,.mobile-enter{display:block;} }
   </style>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
-    <h1>THE HEROES GUILD</h1>
-    <p class="motto">$0 AI-Powered Empire<br>Built in 24 hours • Perth, Western Australia</p>
-    <a href="https://join.aiheroesguild.com" class="btn">ENTER THE GUILD</a>
-    <div id="member-count">
-      <span id="count">Loading...</span> Legends Enlisted — Join the Empire
+  <div class="hero">
+    <h1>THE HEROES GUILD ⚔️🛡️</h1>
+    <p class="motto">Winners enter. Champions are forged.</p>
+    <p class="motto">NULLA DIES SINE LINEA</p>
+
+    <a href="https://discord.gg/DKDU5YQu" class="enter-btn">ENTER THE GUILD</a>
+    <a href="https://discord.gg/DKDU5YQu" class="mobile-enter">ENTER</a>
+
+    <div class="gate-backup">
+      GATE LIVE → discord.gg/DKDU5YQu
     </div>
-    <p class="latin">NULLA DIES SINE LINEA</p>
   </div>
-  <script>
-    // REPLACE 'YOUR_DISCORD_GUILD_ID_HERE' with your real Guild ID (from Discord Settings > Widget > Enable Widget > Copy ID)
-    const guildId = 'YOUR_DISCORD_GUILD_ID_HERE';
-    function updateCount() {
-      fetch(`https://discord.com/api/guilds/${guildId}/widget.json`)
-        .then(r => r.json())
-        .then(d => document.getElementById('count').textContent = d.presence_count || '0')
-        .catch(() => document.getElementById('count').textContent = '0');
-    }
-    updateCount(); // Initial load
-    setInterval(updateCount, 60000); // Every minute
-  </script>
 </body>
 </html>
